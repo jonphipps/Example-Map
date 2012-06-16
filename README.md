@@ -5,3 +5,6 @@ You may view a representation of the file using [LODE](<http://www.essepuntato.i
 
 At the moment, neither of these representations is particularly satisfactory.
 
+There is however a browsable page under development:
+http://dcmi.github.com/schema.org/mappings.html
+

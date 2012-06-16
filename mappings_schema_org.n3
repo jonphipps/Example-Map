@@ -1,0 +1,72 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+
+<http://dublincore.org/mappings/schema.org/> a owl:Ontology .
+
+<schema:Organization> rdfs:subClassOf <dct:Agent> .
+
+<schema:Person> rdfs:subClassOf <dct:Agent> .
+
+<schema:Place> owl:equivalentClass <dct:Location> .
+
+<schema:Event> owl:equivalentClass <dctype:Event> .
+
+<schema:Language> rdfs:subClassOf <dct:LinguisticSystem> .
+
+<dct:BibliographicResource> rdfs:subClassOf <schema:CreativeWork> .
+
+<dct:title> rdfs:subPropertyOf <schema:name> .
+
+<schema:description> owl:equivalentProperty <dct:description> .
+
+<schema:caption> rdfs:subPropertyOf <dct:description> .
+
+<schema:author> rdfs:subPropertyOf <dct:creator> .
+
+<schema:about> owl:equivalentProperty <dct:subject> .
+
+<schema:publisher> owl:equivalentProperty <dct:publisher> .
+
+<schema:datePublished> owl:equivalentProperty <dct:issued> .
+
+<schema:inLanguage> owl:equivalentProperty dc:language .
+
+<schema:encodings> rdfs:subPropertyOf <dct:format> .
+
+<schema:duration> rdfs:subPropertyOf <dct:extent> .
+
+<schema:keywords> rdfs:subPropertyOf dc:subject .
+
+<schema:url> rdfs:subPropertyOf <dct:identifier> .
+
+<schema:contentLocation> rdfs:subPropertyOf <dct:coverage> .
+
+<schema:subEvents> rdfs:subPropertyOf <dct:hasPart> .
+
+<schema:superEvent> rdfs:subPropertyOf <dct:isPartOf> .
+
+<schema:contributor> rdfs:subPropertyOf <dct:contributor> .
+
+<schema:illustrator> rdfs:subPropertyOf <dct:contributor> .
+
+<schema:actors> rdfs:subPropertyOf <dct:contributor> .
+
+<schema:director> rdfs:subPropertyOf <dct:contributor> .
+
+<schema:musicBy> rdfs:subPropertyOf <dct:contributor> .
+
+<schema:producer> rdfs:subPropertyOf <dct:creator> .
+
+<schema:productionCompany> rdfs:subPropertyOf <dct:creator> .
+
+<schema:productId> rdfs:subPropertyOf <dct:identifier> .
+
+<schema:commentTime> rdfs:subPropertyOf <dct:date> .
+
+<schema:birthDate> rdfs:subPropertyOf <dct:date> .
+
+<schema:dateModified> rdfs:subPropertyOf <dct:modified> .
+
+<schema:mentions> rdfs:subPropertyOf <dct:related> .

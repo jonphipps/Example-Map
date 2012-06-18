@@ -1,206 +1,477 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
-    "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd" >
-<html lang="en"
-xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-xmlns:dct="http://purl.org/dc/terms/"
-xmlns:schema="http://schema.org/"
->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>DC -- Schema.org Mappings</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>DC -- Schema.org Mappings</title>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=UTF-8"/>
+
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport"
+          content="width=device-width">
+
+    <!-- Styles -->
+    <link rel="stylesheet"
+          href="twitter-bootstrap-v2/docs/assets/css/bootstrap.css">
+    <style>
+        body {
+            padding-top: 50px; /* When using the navbar-top-fixed */
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+
+        h2 {
+            padding-top: 50px
+        }
+
+        div.headlink {
+            font-size: 18px;
+            line-height: 27px;
+            margin: 0;
+            font-family: inherit;
+            font-weight: bold;
+            color: inherit;
+            text-rendering: optimizelegibility;
+        }
+
+        span.relation {
+            padding-right: 1em;
+        }
+
+        div.table-bordered {
+            border-left: 1px solid #dddddd;
+        }
+
+        div.relation {
+            text-align: right;
+        }
+
+    </style>
+    <link rel="stylesheet"
+          href="twitter-bootstrap-v2/docs/assets/css/bootstrap-responsive.css">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
-<body>
-	<a id="top"></a>
-	<h1 id="firstHeading" class="firstHeading">DC - Schema.org Mappings</h1>
+<body data-spy="scroll">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <ul class="nav">
+                <li class="active">
+                    <a class="brand"
+                       href="#">Dublin Core Metadata Initiative</a>
+                </li>
+                <li><a href="#">Table of Contents</a></li>
+                <li><a href="#Classes">Classes</a></li>
+                <li><a href="#Properties">Properties</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="Top"
+     class="container-fluid">
 
+<h1 id="firstHeading"
+    class="firstHeading">DC - Schema.org Mappings</h1>
 
-<p>You can get an RDF version of the mappings by using an RDFa parser, for example the <a href="http://www.w3.org/2012/pyRdfa/">W3C RDFa Distiller</a>.
-You can also directly use 
-<SCRIPT LANGUAGE="JavaScript">
-  
-      <!--
-      {
-       document.write("<a href=\"http://www.w3.org/2012/pyRdfa/extract?uri="+location.href+"&format=turtle&rdfagraph=output&vocab_expansion=false&rdfa_lite=false&embedded_rdf=true&space_preserve=true&vocab_cache=true&vocab_cache_report=false&vocab_cache_refresh=false\">this URL</a>");
-      }
-      // -->
-</SCRIPT>
-.
+<p>You can get an RDF version of the mappings by using an RDFa parser, for example the <a
+      href="http://www.w3.org/2012/pyRdfa/">W3C RDFa Distiller</a>.
+    You can also directly use
+    <SCRIPT>
+
+        <!--
+        {
+            document.write("<a href=\"http://www.w3.org/2012/pyRdfa/extract?uri=" + location.href + "&format=turtle&rdfagraph=output&vocab_expansion=false&rdfa_lite=false&embedded_rdf=true&space_preserve=true&vocab_cache=true&vocab_cache_report=false&vocab_cache_refresh=false\">this URL</a>");
+        }
+        // -->
+    </SCRIPT>
+    .
 </p>
 
-<table id="toc" class="toc">
-<tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
-<ul>
-<li class="toclevel-1 tocsection-1"><a href="#Classes"><span class="tocnumber">1</span> <span class="toctext">Classes</span></a>
-<ul>
-<li class="toclevel-2 tocsection-2"><a href="#schema:Organization_rdfs:subClassOf_dct:Agent"><span class="tocnumber">1.1</span> <span class="toctext">schema:Organization rdfs:subClassOf dct:Agent</span></a></li>
-<li class="toclevel-2 tocsection-3"><a href="#schema:Person_rdfs:subClassOf_dct:Agent"><span class="tocnumber">1.2</span> <span class="toctext">schema:Person rdfs:subClassOf dct:Agent</span></a></li>
-<li class="toclevel-2 tocsection-4"><a href="#schema:Place_owl:equivalentClass_dct:Location"><span class="tocnumber">1.3</span> <span class="toctext">schema:Place owl:equivalentClass dct:Location</span></a></li>
-<li class="toclevel-2 tocsection-5"><a href="#schema:Event_owl:equivalentClass_dctype:Event"><span class="tocnumber">1.4</span> <span class="toctext">schema:Event owl:equivalentClass  dctype:Event</span></a></li>
-<li class="toclevel-2 tocsection-6"><a href="#schema:Language_rdfs:subClassOf_dct:LinguisticSystem"><span class="tocnumber">1.5</span> <span class="toctext">schema:Language rdfs:subClassOf dct:LinguisticSystem</span></a></li>
-<li class="toclevel-2 tocsection-7"><a href="#dct:BibliographicResource_rdfs:subClassOf_schema:CreativeWork"><span class="tocnumber">1.6</span> <span class="toctext">dct:BibliographicResource rdfs:subClassOf  schema:CreativeWork</span></a></li>
-</ul>
-</li>
-<li class="toclevel-1 tocsection-8"><a href="#Properties"><span class="tocnumber">2</span> <span class="toctext">Properties</span></a>
-<ul>
-<li class="toclevel-2 tocsection-9"><a href="#dct:title_rdfs:subPropertyOf_schema:name"><span class="tocnumber">2.1</span> <span class="toctext">dct:title rdfs:subPropertyOf schema:name</span></a></li>
-<li class="toclevel-2 tocsection-10"><a href="#schema:description_owl:equivalentProperty_dct:description"><span class="tocnumber">2.2</span> <span class="toctext">schema:description owl:equivalentProperty dct:description</span></a></li>
-<li class="toclevel-2 tocsection-11"><a href="#schema:caption_rdfs:subPropertyOf_dct:description"><span class="tocnumber">2.3</span> <span class="toctext">schema:caption rdfs:subPropertyOf dct:description</span></a></li>
-<li class="toclevel-2 tocsection-12"><a href="#schema:author_rdfs:subPropertyOf_dct:creator"><span class="tocnumber">2.4</span> <span class="toctext">schema:author rdfs:subPropertyOf dct:creator</span></a></li>
-<li class="toclevel-2 tocsection-13"><a href="#schema:about_owl:equivalentProperty_dct:subject"><span class="tocnumber">2.5</span> <span class="toctext">schema:about owl:equivalentProperty dct:subject</span></a></li>
-<li class="toclevel-2 tocsection-14"><a href="#schema:publisher_owl:equivalentProperty_dct:publisher"><span class="tocnumber">2.6</span> <span class="toctext">schema:publisher owl:equivalentProperty dct:publisher</span></a></li>
-<li class="toclevel-2 tocsection-15"><a href="#schema:datePublished_owl:equivalentProperty_dct:issued"><span class="tocnumber">2.7</span> <span class="toctext">schema:datePublished owl:equivalentProperty dct:issued</span></a></li>
-<li class="toclevel-2 tocsection-16"><a href="#schema:inLanguage_owl:equivalentProperty_dc:language"><span class="tocnumber">2.8</span> <span class="toctext">schema:inLanguage owl:equivalentProperty dc:language</span></a></li>
-<li class="toclevel-2 tocsection-17"><a href="#schema:encodings_rdfs:subPropertyOf_dct:format"><span class="tocnumber">2.9</span> <span class="toctext">schema:encodings rdfs:subPropertyOf dct:format</span></a></li>
-<li class="toclevel-2 tocsection-18"><a href="#schema:duration_rdfs:subPropertyOf_dct:extent"><span class="tocnumber">2.10</span> <span class="toctext">schema:duration rdfs:subPropertyOf dct:extent</span></a></li>
-<li class="toclevel-2 tocsection-19"><a href="#schema:keywords_rdfs:subPropertyOf_dc:subject"><span class="tocnumber">2.11</span> <span class="toctext">schema:keywords rdfs:subPropertyOf dc:subject</span></a></li>
-<li class="toclevel-2 tocsection-20"><a href="#schema:url_rdfs:subPropertyOf_dct:identifier"><span class="tocnumber">2.12</span> <span class="toctext">schema:url rdfs:subPropertyOf dct:identifier</span></a></li>
-<li class="toclevel-2 tocsection-21"><a href="#schema:contentLocation_rdfs:subPropertyOf_dct:coverage"><span class="tocnumber">2.13</span> <span class="toctext">schema:contentLocation rdfs:subPropertyOf dct:coverage</span></a></li>
-<li class="toclevel-2 tocsection-22"><a href="#schema:subEvents_rdfs:subPropertyOf_dct:hasPart"><span class="tocnumber">2.14</span> <span class="toctext">schema:subEvents rdfs:subPropertyOf dct:hasPart</span></a></li>
-<li class="toclevel-2 tocsection-23"><a href="#schema:superEvent_rdfs:subPropertyOf_dct:isPartOf"><span class="tocnumber">2.15</span> <span class="toctext">schema:superEvent rdfs:subPropertyOf dct:isPartOf</span></a></li>
-<li class="toclevel-2 tocsection-24"><a href="#schema:contributor_rdfs:subPropertyOf_dct:contributor"><span class="tocnumber">2.16</span> <span class="toctext">schema:contributor rdfs:subPropertyOf dct:contributor</span></a></li>
-<li class="toclevel-2 tocsection-25"><a href="#schema:illustrator_rdfs:subPropertyOf_dct:contributor"><span class="tocnumber">2.17</span> <span class="toctext">schema:illustrator rdfs:subPropertyOf dct:contributor</span></a></li>
-<li class="toclevel-2 tocsection-26"><a href="#schema:actors_rdfs:subPropertyOf_dct:contributor"><span class="tocnumber">2.18</span> <span class="toctext">schema:actors rdfs:subPropertyOf dct:contributor</span></a></li>
-<li class="toclevel-2 tocsection-27"><a href="#schema:director_rdfs:subPropertyOf_dct:contributor"><span class="tocnumber">2.19</span> <span class="toctext">schema:director rdfs:subPropertyOf dct:contributor</span></a></li>
-<li class="toclevel-2 tocsection-28"><a href="#schema:musicBy_rdfs:subPropertyOf_dct:contributor"><span class="tocnumber">2.20</span> <span class="toctext">schema:musicBy rdfs:subPropertyOf dct:contributor</span></a></li>
-<li class="toclevel-2 tocsection-29"><a href="#schema:producer_rdfs:subPropertyOf_dct:creator"><span class="tocnumber">2.21</span> <span class="toctext">schema:producer rdfs:subPropertyOf dct:creator</span></a></li>
-<li class="toclevel-2 tocsection-30"><a href="#schema:productionCompany_rdfs:subPropertyOf_dct:creator"><span class="tocnumber">2.22</span> <span class="toctext">schema:productionCompany rdfs:subPropertyOf dct:creator</span></a></li>
-<li class="toclevel-2 tocsection-31"><a href="#schema:productId_rdfs:subPropertyOf_dct:identifier"><span class="tocnumber">2.23</span> <span class="toctext">schema:productId rdfs:subPropertyOf dct:identifier</span></a></li>
-<li class="toclevel-2 tocsection-32"><a href="#schema:commentTime_rdfs:subPropertyOf_dct:date"><span class="tocnumber">2.24</span> <span class="toctext">schema:commentTime rdfs:subPropertyOf dct:date</span></a></li>
-<li class="toclevel-2 tocsection-33"><a href="#schema:birthDate_rdfs:subPropertyOf_dct:date"><span class="tocnumber">2.25</span> <span class="toctext">schema:birthDate rdfs:subPropertyOf dct:date</span></a></li>
-<li class="toclevel-2 tocsection-34"><a href="#schema:dateModified_rdfs:subPropertyOf_dct:modified"><span class="tocnumber">2.26</span> <span class="toctext">schema:dateModified rdfs:subPropertyOf dct:modified</span></a></li>
-<li class="toclevel-2 tocsection-35"><a href="#schema:mentions_rdfs:subPropertyOf_dct:related"><span class="tocnumber">2.27</span> <span class="toctext">schema:mentions rdfs:subPropertyOf dct:related</span></a></li>
-</ul>
-</li>
-</ul>
-</td></tr></tbody>
+<table id="toc"
+       class="toc">
+    <tbody>
+    <tr>
+        <td>
+            <div id="toctitle"><h2>Contents</h2></div>
+            <ul>
+                <li class="toclevel-1 tocsection-1"><a href="#Classes"><span class="tocnumber">1</span> <span
+                      class="toctext">Classes</span></a>
+                    <ul>
+                        <li class="toclevel-2 tocsection-2"><a
+                              href="#schema:Organization_rdfs:subClassOf_dct:Agent"><span class="tocnumber">1.1</span>
+                            <span class="toctext">schema:Organization rdfs:subClassOf dct:Agent</span></a></li>
+                        <li class="toclevel-2 tocsection-3"><a href="#schema:Person_rdfs:subClassOf_dct:Agent"><span
+                              class="tocnumber">1.2</span> <span
+                              class="toctext">schema:Person rdfs:subClassOf dct:Agent</span></a></li>
+                        <li class="toclevel-2 tocsection-4"><a
+                              href="#schema:Place_owl:equivalentClass_dct:Location"><span class="tocnumber">1.3</span>
+                            <span class="toctext">schema:Place owl:equivalentClass dct:Location</span></a></li>
+                        <li class="toclevel-2 tocsection-5"><a
+                              href="#schema:Event_owl:equivalentClass_dctype:Event"><span class="tocnumber">1.4</span>
+                            <span class="toctext">schema:Event owl:equivalentClass  dctype:Event</span></a></li>
+                        <li class="toclevel-2 tocsection-6"><a
+                              href="#schema:Language_rdfs:subClassOf_dct:LinguisticSystem"><span
+                              class="tocnumber">1.5</span> <span class="toctext">schema:Language rdfs:subClassOf dct:LinguisticSystem</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-7"><a
+                              href="#dct:BibliographicResource_rdfs:subClassOf_schema:CreativeWork"><span
+                              class="tocnumber">1.6</span> <span class="toctext">dct:BibliographicResource rdfs:subClassOf  schema:CreativeWork</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="toclevel-1 tocsection-8"><a href="#Properties"><span class="tocnumber">2</span> <span
+                      class="toctext">Properties</span></a>
+                    <ul>
+                        <li class="toclevel-2 tocsection-9"><a href="#dct:title_rdfs:subPropertyOf_schema:name"><span
+                              class="tocnumber">2.1</span> <span class="toctext">dct:title rdfs:subPropertyOf schema:name</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-10"><a
+                              href="#schema:description_owl:equivalentProperty_dct:description"><span class="tocnumber">2.2</span>
+                            <span class="toctext">schema:description owl:equivalentProperty dct:description</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-11"><a
+                              href="#schema:caption_rdfs:subPropertyOf_dct:description"><span
+                              class="tocnumber">2.3</span> <span class="toctext">schema:caption rdfs:subPropertyOf dct:description</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-12"><a
+                              href="#schema:author_rdfs:subPropertyOf_dct:creator"><span class="tocnumber">2.4</span>
+                            <span class="toctext">schema:author rdfs:subPropertyOf dct:creator</span></a></li>
+                        <li class="toclevel-2 tocsection-13"><a href="#schema:about_owl:equivalentProperty_dct:subject"><span
+                              class="tocnumber">2.5</span> <span class="toctext">schema:about owl:equivalentProperty dct:subject</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-14"><a
+                              href="#schema:publisher_owl:equivalentProperty_dct:publisher"><span
+                              class="tocnumber">2.6</span> <span class="toctext">schema:publisher owl:equivalentProperty dct:publisher</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-15"><a
+                              href="#schema:datePublished_owl:equivalentProperty_dct:issued"><span
+                              class="tocnumber">2.7</span> <span class="toctext">schema:datePublished owl:equivalentProperty dct:issued</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-16"><a
+                              href="#schema:inLanguage_owl:equivalentProperty_dc:language"><span
+                              class="tocnumber">2.8</span> <span class="toctext">schema:inLanguage owl:equivalentProperty dc:language</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-17"><a
+                              href="#schema:encodings_rdfs:subPropertyOf_dct:format"><span class="tocnumber">2.9</span>
+                            <span class="toctext">schema:encodings rdfs:subPropertyOf dct:format</span></a></li>
+                        <li class="toclevel-2 tocsection-18"><a
+                              href="#schema:duration_rdfs:subPropertyOf_dct:extent"><span class="tocnumber">2.10</span>
+                            <span class="toctext">schema:duration rdfs:subPropertyOf dct:extent</span></a></li>
+                        <li class="toclevel-2 tocsection-19"><a
+                              href="#schema:keywords_rdfs:subPropertyOf_dc:subject"><span class="tocnumber">2.11</span>
+                            <span class="toctext">schema:keywords rdfs:subPropertyOf dc:subject</span></a></li>
+                        <li class="toclevel-2 tocsection-20"><a
+                              href="#schema:url_rdfs:subPropertyOf_dct:identifier"><span class="tocnumber">2.12</span>
+                            <span class="toctext">schema:url rdfs:subPropertyOf dct:identifier</span></a></li>
+                        <li class="toclevel-2 tocsection-21"><a
+                              href="#schema:contentLocation_rdfs:subPropertyOf_dct:coverage"><span class="tocnumber">2.13</span>
+                            <span class="toctext">schema:contentLocation rdfs:subPropertyOf dct:coverage</span></a></li>
+                        <li class="toclevel-2 tocsection-22"><a href="#schema:subEvents_rdfs:subPropertyOf_dct:hasPart"><span
+                              class="tocnumber">2.14</span> <span class="toctext">schema:subEvents rdfs:subPropertyOf dct:hasPart</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-23"><a
+                              href="#schema:superEvent_rdfs:subPropertyOf_dct:isPartOf"><span
+                              class="tocnumber">2.15</span> <span class="toctext">schema:superEvent rdfs:subPropertyOf dct:isPartOf</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-24"><a
+                              href="#schema:contributor_rdfs:subPropertyOf_dct:contributor"><span
+                              class="tocnumber">2.16</span> <span class="toctext">schema:contributor rdfs:subPropertyOf dct:contributor</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-25"><a
+                              href="#schema:illustrator_rdfs:subPropertyOf_dct:contributor"><span
+                              class="tocnumber">2.17</span> <span class="toctext">schema:illustrator rdfs:subPropertyOf dct:contributor</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-26"><a
+                              href="#schema:actors_rdfs:subPropertyOf_dct:contributor"><span
+                              class="tocnumber">2.18</span> <span class="toctext">schema:actors rdfs:subPropertyOf dct:contributor</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-27"><a
+                              href="#schema:director_rdfs:subPropertyOf_dct:contributor"><span
+                              class="tocnumber">2.19</span> <span class="toctext">schema:director rdfs:subPropertyOf dct:contributor</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-28"><a
+                              href="#schema:musicBy_rdfs:subPropertyOf_dct:contributor"><span
+                              class="tocnumber">2.20</span> <span class="toctext">schema:musicBy rdfs:subPropertyOf dct:contributor</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-29"><a
+                              href="#schema:producer_rdfs:subPropertyOf_dct:creator"><span class="tocnumber">2.21</span>
+                            <span class="toctext">schema:producer rdfs:subPropertyOf dct:creator</span></a></li>
+                        <li class="toclevel-2 tocsection-30"><a
+                              href="#schema:productionCompany_rdfs:subPropertyOf_dct:creator"><span class="tocnumber">2.22</span>
+                            <span class="toctext">schema:productionCompany rdfs:subPropertyOf dct:creator</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-31"><a
+                              href="#schema:productId_rdfs:subPropertyOf_dct:identifier"><span
+                              class="tocnumber">2.23</span> <span class="toctext">schema:productId rdfs:subPropertyOf dct:identifier</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-32"><a
+                              href="#schema:commentTime_rdfs:subPropertyOf_dct:date"><span class="tocnumber">2.24</span>
+                            <span class="toctext">schema:commentTime rdfs:subPropertyOf dct:date</span></a></li>
+                        <li class="toclevel-2 tocsection-33"><a
+                              href="#schema:birthDate_rdfs:subPropertyOf_dct:date"><span class="tocnumber">2.25</span>
+                            <span class="toctext">schema:birthDate rdfs:subPropertyOf dct:date</span></a></li>
+                        <li class="toclevel-2 tocsection-34"><a
+                              href="#schema:dateModified_rdfs:subPropertyOf_dct:modified"><span
+                              class="tocnumber">2.26</span> <span class="toctext">schema:dateModified rdfs:subPropertyOf dct:modified</span></a>
+                        </li>
+                        <li class="toclevel-2 tocsection-35"><a
+                              href="#schema:mentions_rdfs:subPropertyOf_dct:related"><span class="tocnumber">2.27</span>
+                            <span class="toctext">schema:mentions rdfs:subPropertyOf dct:related</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+    </tr>
+    </tbody>
 </table>
+<div id="Classes">
+<h2><span class="mw-headline"> Classes </span></h2>
 
-<h2> <span class="mw-headline" id="Classes"> Classes </span></h2>
+<div class="row-fluid table-bordered">
+    <div class="span12">
+        <div class="row-fluid headlink"
+             id="schema:Organization_rdfs:subClassOf_dct:Agent"
+             typeof="rdf:Property"
+             about="http://schema.org/Organization">
 
-<h3 class="mw-headline" id="schema:Organization_rdfs:subClassOf_dct:Agent" about="http://schema.org/Organization">schema:Organization rdfs:subClassOf <span rel="rdfs:subClassOf" resource="http://purl.org/dc/terms/Agent">dct:Agent</span></h3>
+            <div class="span4"><a href="http://www.schema.org/docs/schema_org_rdfa.html"
+                                  class="external free"
+                                  rel="nofollow">schema:Organization</a></div>
+            <div class="span2 relation">rdfs:subClassOf</div>
+            <div class="span6"><a property="rdfs:subClassOf"
+                                  href="http://purl.org/dc/terms/Agent"
+                                  class="external free"
+                                  rel="nofollow">dct:Agent</a></div>
+        </div>
+        <div class="row-fluid">
+            <div class="span6">
+<pre>rdf:type rdfs:Class .
+rdfs:label "Organization"@en .
+rdfs:comment "An organization such as a school, NGO, corporation, club, etc."@en .
+rdfs:subClassOf schema:Thing .
+</pre>
+            </div>
+            <div class="span6">
+<pre>rdfs:label "Agent"@en-us .
+rdfs:comment "A resource that acts or has the power to act."@en-us .
+dct:description "Examples of Agent include person, organization, and software agent."@en-us .
+rdf:type rdfs:Class .
+rdf:type dct:AgentClass .
+</pre>
+            </div>
+        </div>
+        <div class="row-fluid table-bordered">
+            <div class="span2">reference this id:</div>
+            <div class="span10">schema:Organization_rdfs:subClassOf_dct:Agent</div>
+        </div>
+        <div class="row-fluid table-bordered">
+            <div class="span2">Status:</div>
+            <div class="span10">[proposed | in discussion | approved]</div>
+        </div>
+        <div class="row-fluid table-bordered">
+            <div class="span2">Issues on Github:</div>
+            <div class="span10">
+                <p>
+                    <a href="https://github.com/dcmi/schema.org/issues/search?q=schema:Organization_rdfs:subClassOf_dct:Agent">Search
+                        for issues</a> related to this map</p>
+                <p>
+                    <a href="https://api.github.com/legacy/issues/search/dcmi/schema.org/open/schema:Organization_rdfs:subClassOf_dct:Agent">Search
+                        for issues</a> related to this id using the Github API</p>
+            </div>
+
+        </div>
+        <div class="row-fluid table-bordered">
+            <div class="span2">Discussion on mailing list:</div>
+            <div class="span10">Service TBA</div>
+        </div>
+        <div class="row-fluid table-bordered">
+            <div class="span2">Definitions:</div>
+            <div class="span10"></div>
+        </div>
+    </div>
+</div>
+
+<h3 class="mw-headline"
+    id="schema:Person_rdfs:subClassOf_dct:Agent"
+    about="http://schema.org/Person">schema:Person
+    rdfs:subClassOf <span rel="rdfs:subClassOf"
+                          resource="http://purl.org/dc/terms/Agent">dct:Agent</span></h3>
 <ul>
-<li>Status: [proposed | in discussion | approved]
-<li>Issues on Github: Completely unrelated <a href="https://github.com/dcmi/schema.org/issues/1">Issue 1</a>, <a href="https://github.com/dcmi/schema.org/issues/2">Issue 2</a>  is more relevant for the next mapping. One can even cite Github issue comments here, like <a href="https://github.com/dcmi/schema.org/issues/1#issuecomment-4996567">this one</a>.</li>
-<li>Discussion on mailing list: <a href="https://www.jiscmail.ac.uk/cgi-bin/webadmin?A2=ind1204&L=dc-architecture&F=&S=&P=2541">this thread</a> has nothing to do with the mapping. And linking to emails through the Github issue tracker may be preferable, as done <a href="https://github.com/dcmi/schema.org/issues/1">here</a>!</li>
-<li>Definitions:</li>
+    <li>Status: [proposed | in discussion | approved]
+    <li>Issues on Github: .</li>
+    <li>Discussion on mailing list. Linking to emails through the Github issue tracker may be preferable, as done <a
+          href="https://github.com/dcmi/schema.org/issues/1">here</a>!
+    </li>
+    <li>Definitions:</li>
 </ul>
-<a href="http://dublincore.org/2010/10/11/dcterms.rdf#" class="external free" rel="nofollow">http://dublincore.org/2010/10/11/dcterms.rdf#</a>
+<a href="http://dublincore.org/2010/10/11/dcterms.rdf#"
+   class="external free"
+   rel="nofollow">http://dublincore.org/2010/10/11/dcterms.rdf#</a>
 <pre>dct:Agent rdfs:label "Agent"@en-us .
 dct:Agent rdfs:comment "A resource that acts or has the power to act."@en-us .
 dct:Agent dct:description "Examples of Agent include person, organization, and software agent."@en-us .
 dct:Agent rdf:type rdfs:Class .
 dct:Agent rdf:type dct:AgentClass .
 </pre>
-<a href="http://schema.rdfs.org/all.nt" class="external free" rel="nofollow">http://schema.rdfs.org/all.nt</a> (based on <a href="http://schema.org/docs/schemaorg.owl" class="external free" rel="nofollow">http://schema.org/docs/schemaorg.owl</a>)
-<pre>schema:Organization rdf:type rdfs:Class .
-schema:Organization rdfs:label "Organization"@en .
-schema:Organization rdfs:comment "An organization such as a school, NGO, corporation, club, etc."@en .
-schema:Organization rdfs:subClassOf schema:Thing .
-</pre>
-
-<h3 class="mw-headline" id="schema:Person_rdfs:subClassOf_dct:Agent" about="http://schema.org/Person">schema:Person rdfs:subClassOf <span rel="rdfs:subClassOf" resource="http://purl.org/dc/terms/Agent">dct:Agent</span></h3>
-<ul>
-<li>Status: [proposed | in discussion | approved]
-<li>Issues on Github: .</li>
-<li>Discussion on mailing list. Linking to emails through the Github issue tracker may be preferable, as done <a href="https://github.com/dcmi/schema.org/issues/1">here</a>!</li>
-<li>Definitions:</li>
-</ul>
-<a href="http://dublincore.org/2010/10/11/dcterms.rdf#" class="external free" rel="nofollow">http://dublincore.org/2010/10/11/dcterms.rdf#</a>
-<pre>dct:Agent rdfs:label "Agent"@en-us .
-dct:Agent rdfs:comment "A resource that acts or has the power to act."@en-us .
-dct:Agent dct:description "Examples of Agent include person, organization, and software agent."@en-us .
-dct:Agent rdf:type rdfs:Class .
-dct:Agent rdf:type dct:AgentClass .
-</pre>
-<a href="http://schema.rdfs.org/all.nt" class="external free" rel="nofollow">http://schema.rdfs.org/all.nt</a> (based on <a href="http://schema.org/docs/schemaorg.owl" class="external free" rel="nofollow">http://schema.org/docs/schemaorg.owl</a>)
+<a href="http://schema.rdfs.org/all.nt"
+   class="external free"
+   rel="nofollow">http://schema.rdfs.org/all.nt</a>
+(based on
+<a href="http://schema.org/docs/schemaorg.owl"
+   class="external free"
+   rel="nofollow">http://schema.org/docs/schemaorg.owl</a>)
 <pre>schema:Person rdf:type rdfs:Class .
 schema:Person rdfs:label "Person"@en .
 schema:Person rdfs:comment "A person (alive, dead, undead, or fictional)."@en .
 schema:Person rdfs:subClassOf schema:Thing .
 </pre>
 
-<h3 class="mw-headline" id="schema:Place_owl:equivalentClass_dct:Location" about="http://schema.org/Place">schema:Place rdfs:subClassOf <span rel="rdfs:subClassOf" resource="http://purl.org/dc/terms/Location">dct:Location</span></h3>
+<h3 class="mw-headline"
+    id="schema:Place_owl:equivalentClass_dct:Location"
+    about="http://schema.org/Place">
+    schema:Place
+    rdfs:subClassOf <span rel="rdfs:subClassOf"
+                          resource="http://purl.org/dc/terms/Location">dct:Location</span>
+</h3>
 <ul>
-<li>Status: [proposed | in discussion | approved]
-<li>Issues on Github: .</li>
-<li>Discussion on mailing list. Linking to emails through the Github issue tracker may be preferable, as done <a href="https://github.com/dcmi/schema.org/issues/1">here</a>!</li>
-<li>Definitions:</li>
+    <li>Status: [proposed | in discussion | approved]
+    <li>Issues on Github: .</li>
+    <li>Discussion on mailing list. Linking to emails through the Github issue tracker may be preferable, as done <a
+          href="https://github.com/dcmi/schema.org/issues/1">here</a>!
+    </li>
+    <li>Definitions:</li>
 </ul>
-<a href="http://dublincore.org/2010/10/11/dcterms.rdf#" class="external free" rel="nofollow">http://dublincore.org/2010/10/11/dcterms.rdf#</a>
+<a href="http://dublincore.org/2010/10/11/dcterms.rdf#"
+   class="external free"
+   rel="nofollow">http://dublincore.org/2010/10/11/dcterms.rdf#</a>
 <pre>dct:Location rdfs:label "Location"@en-us .
 dct:Location rdfs:comment "A spatial region or named place."@en-us .
 dct:Location rdf:type rdfs:Class .
 dct:Location rdfs:subClassOf dct:LocationPeriodOrJurisdiction .
 </pre>
-<a href="http://schema.rdfs.org/all.nt" class="external free" rel="nofollow">http://schema.rdfs.org/all.nt</a> (based on <a href="http://schema.org/docs/schemaorg.owl" class="external free" rel="nofollow">http://schema.org/docs/schemaorg.owl</a>)
+<a href="http://schema.rdfs.org/all.nt"
+   class="external free"
+   rel="nofollow">http://schema.rdfs.org/all.nt</a>
+(based on
+<a href="http://schema.org/docs/schemaorg.owl"
+   class="external free"
+   rel="nofollow">http://schema.org/docs/schemaorg.owl</a>)
 <pre>schema:Place rdf:type rdfs:Class .
 schema:Place rdfs:label "Place"@en .
 schema:Place rdfs:comment "Entities that have a somewhat fixed, physical extension."@en .
 schema:Place rdfs:subClassOf schema:Thing .
 </pre>
 
-<h3 class="mw-headline" id="schema:Event_owl:equivalentClass_dct:Event" about="http://schema.org/Event">schema:Event rdfs:subClassOf <span rel="rdfs:subClassOf" resource="http://purl.org/dc/terms/Event">dct:Event</span></h3>
+<h3 class="mw-headline"
+    id="schema:Event_owl:equivalentClass_dct:Event"
+    about="http://schema.org/Event">schema:Event
+    rdfs:subClassOf <span rel="rdfs:subClassOf"
+                          resource="http://purl.org/dc/terms/Event">dct:Event</span></h3>
 <ul>
-<li>Status: [proposed | in discussion | approved]
-<li>Issues on Github: .</li>
-<li>Discussion on mailing list. Linking to emails through the Github issue tracker may be preferable, as done <a href="https://github.com/dcmi/schema.org/issues/1">here</a>!</li>
-<li>Definitions:</li>
+    <li>Status: [proposed | in discussion | approved]
+    <li>Issues on Github: .</li>
+    <li>Discussion on mailing list. Linking to emails through the Github issue tracker may be preferable, as done <a
+          href="https://github.com/dcmi/schema.org/issues/1">here</a>!
+    </li>
+    <li>Definitions:</li>
 </ul>
-<a href="http://dublincore.org/2010/10/11/dcterms.rdf#" class="external free" rel="nofollow">http://dublincore.org/2010/10/11/dcterms.rdf#</a>
+<a href="http://dublincore.org/2010/10/11/dcterms.rdf#"
+   class="external free"
+   rel="nofollow">http://dublincore.org/2010/10/11/dcterms.rdf#</a>
 <pre>dctype:Event rdfs:label "Event"@en-us .
 dctype:Event rdfs:comment "A non-persistent, time-based occurrence."@en-us .
 dctype:Event dct:description "Metadata for an event provides descriptive information that is the basis for discovery of the purpose, location, duration, and responsible agents associated with an event. Examples include an exhibition, webcast, conference, workshop, open day, performance, battle, trial, wedding, tea party, conflagration."@en-us .
 dctype:Event rdf:type rdfs:Class .
-dctype:Event <a href="http://purl.org/dc/dcam/memberOf" class="external free" rel="nofollow">http://purl.org/dc/dcam/memberOf</a> dct:DCMIType .
+dctype:Event <a href="http://purl.org/dc/dcam/memberOf"
+                class="external free"
+                rel="nofollow">http://purl.org/dc/dcam/memberOf</a> dct:DCMIType .
 </pre>
-<a href="http://schema.rdfs.org/all.nt" class="external free" rel="nofollow">http://schema.rdfs.org/all.nt</a> (based on <a href="http://schema.org/docs/schemaorg.owl" class="external free" rel="nofollow">http://schema.org/docs/schemaorg.owl</a>)
+<a href="http://schema.rdfs.org/all.nt"
+   class="external free"
+   rel="nofollow">http://schema.rdfs.org/all.nt</a>
+(based on
+<a href="http://schema.org/docs/schemaorg.owl"
+   class="external free"
+   rel="nofollow">http://schema.org/docs/schemaorg.owl</a>)
 <pre>schema:Event rdf:type rdfs:Class .
 schema:Event rdfs:label "Event"@en .
 schema:Event rdfs:comment "An event happening at a certain time at a certain location."@en .
 schema:Event rdfs:subClassOf schema:Thing .
 </pre>
 
-<h3 class="mw-headline" id="schema:Language_rdfs:subClassOf_dct:LinguisticSystem" about="http://schema.org/Language">schema:Language rdfs:subClassOf <span rel="rdfs:subClassOf" resource="http://purl.org/dc/terms/LinguisticSystem">dct:LinguisticSystem</span></h3>
+<h3 class="mw-headline"
+    id="schema:Language_rdfs:subClassOf_dct:LinguisticSystem"
+    about="http://schema.org/Language">
+    schema:Language rdfs:subClassOf <span rel="rdfs:subClassOf"
+                                          resource="http://purl.org/dc/terms/LinguisticSystem">dct:LinguisticSystem</span>
+</h3>
 <ul>
-<li>Status: [proposed | in discussion | approved]
-<li>Issues on Github: .</li>
-<li>Discussion on mailing list. Linking to emails through the Github issue tracker may be preferable, as done <a href="https://github.com/dcmi/schema.org/issues/1">here</a>!</li>
-<li>Definitions:</li>
+    <li>Status: [proposed | in discussion | approved]
+    <li>Issues on Github: .</li>
+    <li>Discussion on mailing list. Linking to emails through the Github issue tracker may be preferable, as done <a
+          href="https://github.com/dcmi/schema.org/issues/1">here</a>!
+    </li>
+    <li>Definitions:</li>
 </ul>
-<a href="http://dublincore.org/2010/10/11/dcterms.rdf#" class="external free" rel="nofollow">http://dublincore.org/2010/10/11/dcterms.rdf#</a>
+<a href="http://dublincore.org/2010/10/11/dcterms.rdf#"
+   class="external free"
+   rel="nofollow">http://dublincore.org/2010/10/11/dcterms.rdf#</a>
 <pre>dct:LinguisticSystem rdfs:label "Linguistic System"@en-us .
 dct:LinguisticSystem rdfs:comment "A system of signs, symbols, sounds, gestures, or rules used in communication."@en-us .
 dct:LinguisticSystem dct:description "Examples include written, spoken, sign, and computer languages."@en-us .
 dct:LinguisticSystem rdf:type rdfs:Class .
 </pre>
-<a href="http://schema.rdfs.org/all.nt" class="external free" rel="nofollow">http://schema.rdfs.org/all.nt</a> (based on <a href="http://schema.org/docs/schemaorg.owl" class="external free" rel="nofollow">http://schema.org/docs/schemaorg.owl</a>)
+<a href="http://schema.rdfs.org/all.nt"
+   class="external free"
+   rel="nofollow">http://schema.rdfs.org/all.nt</a>
+(based on
+<a href="http://schema.org/docs/schemaorg.owl"
+   class="external free"
+   rel="nofollow">http://schema.org/docs/schemaorg.owl</a>)
 <pre>schema:Language rdf:type rdfs:Class .
 schema:Language rdfs:label "Language"@en .
 schema:Language rdfs:comment "Natural languages such as Spanish, Tamil, Hindi, English, etc. and programming languages such as Scheme and Lisp."@en .
 schema:Language rdfs:subClassOf schema:Intangible .
 </pre>
 
-<h3 class="mw-headline" id="dct:BibliographicResource_rdfs:subClassOf_schema:CreativeWork" about="http://purl.org/dc/terms/BibliographicResource">dct:BibliographicResource rdfs:subClassOf <span rel="rdfs:subClassOf" resource="http://schema.org/CreativeWork">schema:CreativeWork</span></h3>
+<h3 class="mw-headline"
+    id="dct:BibliographicResource_rdfs:subClassOf_schema:CreativeWork"
+    about="http://purl.org/dc/terms/BibliographicResource">dct:BibliographicResource rdfs:subClassOf <span
+      rel="rdfs:subClassOf"
+      resource="http://schema.org/CreativeWork">schema:CreativeWork</span></h3>
 <ul>
-<li>Status: [proposed | in discussion | approved]
-<li>Issues on Github: .</li>
-<li>Discussion on mailing list. Linking to emails through the Github issue tracker may be preferable, as done <a href="https://github.com/dcmi/schema.org/issues/1">here</a>!</li>
-<li>Definitions:</li>
+    <li>Status: [proposed | in discussion | approved]
+    <li>Issues on Github: .</li>
+    <li>Discussion on mailing list. Linking to emails through the Github issue tracker may be preferable, as done <a
+          href="https://github.com/dcmi/schema.org/issues/1">here</a>!
+    </li>
+    <li>Definitions:</li>
 </ul>
-<a href="http://dublincore.org/2010/10/11/dcterms.rdf#" class="external free" rel="nofollow">http://dublincore.org/2010/10/11/dcterms.rdf#</a>
+<a href="http://dublincore.org/2010/10/11/dcterms.rdf#"
+   class="external free"
+   rel="nofollow">http://dublincore.org/2010/10/11/dcterms.rdf#</a>
 <pre>dct:BibliographicResource rdfs:label "Bibliographic Resource"@en-us .
 dct:BibliographicResource rdfs:comment "A book, article, or other documentary resource."@en-us .
 dct:BibliographicResource rdf:type rdfs:Class .
 </pre>
-<a href="http://schema.rdfs.org/all.nt" class="external free" rel="nofollow">http://schema.rdfs.org/all.nt</a> (based on <a href="http://schema.org/docs/schemaorg.owl" class="external free" rel="nofollow">http://schema.org/docs/schemaorg.owl</a>)
+<a href="http://schema.rdfs.org/all.nt"
+   class="external free"
+   rel="nofollow">http://schema.rdfs.org/all.nt</a>
+(based on
+<a href="http://schema.org/docs/schemaorg.owl"
+   class="external free"
+   rel="nofollow">http://schema.org/docs/schemaorg.owl</a>)
 <pre>schema:CreativeWork rdf:type rdfs:Class .
 schema:CreativeWork rdfs:label "Creative Work"@en .
 schema:CreativeWork rdfs:comment "The most generic kind of creative work, including books, movies, photographs, software programs, etc."@en .
 schema:CreativeWork rdfs:subClassOf schema:Thing .
 </pre>
-
-<h2> <span class="mw-headline" id="Properties"> Properties </span></h2>
+</div>
+<h2><span class="mw-headline"
+          id="Properties"> Properties </span></h2>
 
 <!-- UNCOMMENT AND ADAPT TO RDFA
 
@@ -772,6 +1043,20 @@ schema:mentions rdfs:comment "Indicates that the CreativeWork contains a referen
 schema:mentions rdfs:domain schema:CreativeWork .
 schema:mentions rdfs:range schema:Thing .
 </pre>
+-->
 
+</div>
+<!-- /container -->
+<!-- Link jQuery via Google + local fallback, see h5bp.com -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="twitter-bootstrap-v2/docs/assets/js//jquery-1.7.1.min.js"><\/script>')</script>
+
+<!-- Bootstrap JS, the minified bundle -->
+<script src="twitter-bootstrap-v2/docs/assets/js/bootstrap.min.js"></script>
+<script>
+    $('#navbar').scrollspy({
+        offset:60
+    });
+</script>
 </body>
 </html>
